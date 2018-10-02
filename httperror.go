@@ -48,7 +48,7 @@ func (err httpErr) Inner() error {
 func (err httpErr) Error() string {
 	str := fmt.Sprintf("vbnet.%d: %s (HTTP %d)", err.code, err.message, err.httpCode)
 	if err.inner != nil {
-		str += fmt.Sprintf(", due-to %v", err.inner)
+		str += fmt.Sprintf(", due-to: %v", err.inner)
 	}
 	return str
 }
